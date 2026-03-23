@@ -6,11 +6,14 @@ export function ThemeProvider({ children }) {
   const [isDark, setIsDark] = useState(false);
 
   function toggleTheme() {
-    setIsDark(prev => !prev);
-    document.document.Element.setAttribute(
-      'data-theme',
-      isDark ? 'light' : 'dark'
-    );
+    setIsDark(prev => {
+      const newIsDark = !prev;
+      document.documentElement.setAttribute(
+        'data-theme',
+        newIsDark ? 'dark' : 'light'
+      );
+      return newIsDark;
+    });
   }
 
   return (
