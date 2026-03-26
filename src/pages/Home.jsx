@@ -2,6 +2,7 @@ import { useState } from 'react';
 import useFetch from '../hooks/useFetch';
 import CountryCard from '../components/CountryCard';
 import '../styles/Home.css';
+import SkeletonCard from '../components/SkeletonCard';
 
 const regions = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
 
@@ -24,7 +25,7 @@ function Home() {
       <div className="region-filters">
         <button 
           className={`region-btn ${region === "" ? "active" : ""}`}
-          onclick={() => setRegion("")}
+          onClick={() => setRegion("")}
         >
           All
         </button>
@@ -39,7 +40,15 @@ function Home() {
         ))}
       </div>
       
-      {loading && <p className="status">Loading countries...</p>}
+      {loading && (
+        <div className="country-grid">
+          {Array.from({ length:12 }).map((_, i) => (
+            <SkeletonCard key={i} />
+          ))}
+        </div>
+      )}
+      
+
       {error && <p className="status error">Error loading countries.</p>}
 
       {data && (

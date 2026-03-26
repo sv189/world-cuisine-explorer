@@ -9,7 +9,7 @@ function CountryCard({ country }) {
   }
 
   return (
-    <div className="country-card">
+    <div className="country-card" onClick={handleClick}>
       <img 
         src={country.flags.svg} 
         alt={country.flags.alt || `Flag of ${country.name.common}`}

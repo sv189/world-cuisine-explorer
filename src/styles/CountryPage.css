@@ -1,0 +1,39 @@
+.country-page {
+    padding: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.country-header {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.country-header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.country-header p {
+    color: #888;
+    font-size: 1rem;
+}
+
+.dish-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #888;
+}
+
+.empty-state span {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 12px;
+}
