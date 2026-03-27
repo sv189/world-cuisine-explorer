@@ -1,0 +1,57 @@
+.favorites-page {
+    padding: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.favorites-header {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.favorites-header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.favorites-header p {
+    color: #888;
+}
+
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #888;
+}
+
+.empty-state span {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.empty-state p {
+    margin-bottom: 16px;
+}
+
+.back-btn {
+    background: #ff6b35;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s ease;
+}
+
+.back-btn:hover {
+    background: #e55a2b;
+}

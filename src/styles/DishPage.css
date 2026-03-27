@@ -1,0 +1,129 @@
+.dish-page {
+    padding: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.back-btn {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 24px;
+    transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+    background: #ff6b35;
+    border-color: #ff6b35;
+    color: white;
+}
+
+.dish-hero {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.dish-hero-img {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 16px;
+    flex-shrink: 0;
+}
+
+.dish-hero-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+}
+
+.dish-hero-info h1 {
+    font-size: 1.8rem;
+    color: var(--text-color);
+}
+
+.dish-meta {
+    color: #888;
+    font-size: 1rem;
+}
+
+.fav-btn-large {
+    background: none;
+    border: 2px solid #ff6b35;
+    color: #ff6b35;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 15px;
+    width: fit-content;
+    transition: all 0.2s ease;
+}
+
+.fav-btn-large:hover {
+    background: #ff6b35;
+    color: white;
+} 
+
+.fav-btn-large.favorited {
+    background: #ff6b35;
+    color: white;
+}
+
+.dish-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 32px;
+    margin-bottom: 32px;
+}
+
+.ingredients-section h2,
+.instructions-section h2,
+.video-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    color: var(--text-color);
+    border-bottom: 2px solid #ff6b35;
+    padding-bottom: 8px;
+}
+
+.ingredients-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ingredients-list li {
+    padding: 8px 12px;
+    background: var(--card-bg);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.instructions {
+    line-height: 1.8;
+    color: var(--text-color);
+    font-size: 15px;
+    white-space: pre-line;
+}
+
+.video-section {
+    margin-bottom: 32px;
+}
+
+.recipe-video {
+    width: 100%;
+    height: 400px;
+    border-radius: 12px;
+    border: none;
+}
