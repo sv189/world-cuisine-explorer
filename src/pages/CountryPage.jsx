@@ -64,13 +64,20 @@ function CountryPage() {
         <p>Explore traditional dishes from {id}</p>
       </div>
 
-      {loading && (
+      {loading && area && (
         <div className="dish-grid">
           {Array.from({ length:8 }).map((_, i) => (
           <SkeletonCard key={i} />
           ))}
         </div>
-    )}
+      )}
+      
+      {!area && (
+        <div className="empty-state">
+          <span>🍽️</span>
+          <p>No recipes available for {id} yet. Try exploring another country!</p>
+        </div>
+      )}
 
       {error && <p className="status error">No dishes found for {id}.</p>}
 

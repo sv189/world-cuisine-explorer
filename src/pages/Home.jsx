@@ -4,6 +4,7 @@ import CountryCard from '../components/CountryCard';
 import '../styles/Home.css';
 import SkeletonCard from '../components/SkeletonCard';
 import SearchBar from '../components/SearchBar';
+import WorldMap from '../components/WorldMap';
 
 const regions = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
 
@@ -12,8 +13,8 @@ function Home() {
   const [search, setSearch] = useState("");
 
   const url = region
-    ? `https://restcountries.com/v3.1/region/${region}?fields=name,flags,region,cca2`
-    : `https://restcountries.com/v3.1/all?fields=name,flags,region,cca2`;
+    ? `https://restcountries.com/v3.1/region/${region}?fields=name,flags,region,cca2,latlng`
+    : `https://restcountries.com/v3.1/all?fields=name,flags,region,cca2,latlng`;
 
   const { data, loading, error } = useFetch(url);
 
@@ -23,6 +24,8 @@ function Home() {
         <h1>🌍 Explore World Cuisines</h1>
         <p>Click a country to discover its traditional dishes and recipes</p>
       </div>
+
+      <WorldMap countries={data} />
 
       <SearchBar onSearch={setSearch} placeholder="Search countries..." />
 

@@ -1,0 +1,9 @@
+.world-map {
+    height: 400px;
+    width: 100%;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    z-index: 0;
+}
