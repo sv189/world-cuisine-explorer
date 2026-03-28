@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
 import DishCard from '../components/DishCard';
 import SkeletonCard from '../components/SkeletonCard';
@@ -45,7 +45,7 @@ const countryToArea = {
 
 function CountryPage() {
   const { id } = useParams();
-
+  const navigate = useNavigate();
   const area = countryToArea[id];
 
   const { data, loading, error } = useFetch(
@@ -56,6 +56,9 @@ function CountryPage() {
 
   return (
     <div className="country-page">
+      <button className="back-btn" onClick={() => navigate(-1)}>
+        ← Back
+      </button>
       <div className="country-header">
         <h1>🍽️ {area || id} Cuisine</h1>
         <p>Explore traditional dishes from {id}</p>
