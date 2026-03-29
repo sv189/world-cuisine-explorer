@@ -2,7 +2,7 @@
 
 A React application for exploring world cuisines, traditional dishes, and recipes by country. Built with React, React Router, and multiple APIs.
 
-🔗 **[Live Demo](#)** <!-- add your GitHub Pages link after deployment -->
+🔗 **[Live Demo](https://sv189.github.io/world-cuisine-explorer/)** 
 
 ---
 

@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import { ThemeProvider } from './context/ThemeContext';
 import { FavoritesProvider } from './context/FavoritesContext';
 import Home from './pages/Home';
@@ -12,7 +12,7 @@ function App() {
   return (
     <ThemeProvider>
       <FavoritesProvider>
-        <BrowserRouter>
+        <HashRouter>
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -20,7 +20,7 @@ function App() {
             <Route path="/dish/:id" element={<DishPage />} />
             <Route path="/favorites" element={<FavoritesPage />} />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </FavoritesProvider>
     </ThemeProvider>
   );
