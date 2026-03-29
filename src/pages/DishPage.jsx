@@ -2,6 +2,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
 import { useFavorites } from '../context/FavoritesContext';
 import '../styles/DishPage.css';
+import SkeletonCard from '../components/SkeletonCard';
 
 function DishPage() {
   const { id } = useParams();
@@ -45,7 +46,15 @@ function DishPage() {
     return match ? match[1] : null;
   }
 
-  if (loading) return <div className="dish-page"><p     className="status">Loading recipe...</p></div>;
+  if (loading) return (
+    <div className="dish-page">
+      <div className="dish-grid">
+        {Array.from({ length: 4 }).map((_, i) => (
+          <SkeletonCard key={i} />
+        ))}
+      </div>
+    </div>
+  );
   if (error) return <div className="dish-page
 "><p className="status error">Error loading recipe...</p></div>;
   if (!meal) return <div className="dish-page

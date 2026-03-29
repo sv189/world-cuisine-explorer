@@ -1,14 +1,24 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../styles/SearchBar.css';
+
+function debounce(fn, delay) {
+  let timer;
+  return function(...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, args), delay); 
+  };
+}
 
 function SearchBar({ onSearch, placeholder = "Search countries..."}) {
   const [query, setQuery] = useState("");
 
+  useEffect(() => {
+    const debouncedSearch = debounce(onSearch, 300);
+    debouncedSearch(query);
+  }, [query]);
+
   function handleChange(e) {
-    const value = e.target.value;
-    console.log("search value:", value);
-    setQuery(value);
-    onSearch(value);
+    setQuery(e.target.value);
   }
 
   function handleClear() {
@@ -27,7 +37,7 @@ function SearchBar({ onSearch, placeholder = "Search countries..."}) {
         className="search-input"  
       />
       {query && (
-        <button className="clear-btn" onClick={handleClear}>X</button>
+        <button className="clear-btn" onClick={handleClear}>✕</button>
       )}
     </div>
   );
